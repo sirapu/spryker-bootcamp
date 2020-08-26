@@ -408,7 +408,7 @@ $config[CmsConstants::YVES_THEME] = $YVES_THEME;
 
 $config[ErrorHandlerConstants::DISPLAY_ERRORS] = true;
 $config[ErrorHandlerConstants::YVES_ERROR_PAGE] = APPLICATION_ROOT_DIR . '/public/Yves/errorpage/error.html';
-$config[ErrorHandlerConstants::ERROR_RENDERER] = WebHtmlErrorRenderer::class;
+$config[ErrorHandlerConstants::ERROR_RENDERER] = \Spryker\Shared\ErrorHandler\ErrorRenderer\WebExceptionErrorRenderer::class;
 // Due to some deprecation notices we silence all deprecations for the time being
 // To only log e.g. deprecations instead of throwing exceptions here use
 //$config[ErrorHandlerConstants::ERROR_LEVEL] = E_ALL
