@@ -1,0 +1,13 @@
+{% extends template('page-layout-main') %}
+
+{% define data = {
+    reversedString: _view.reversedString
+} %}
+
+{% block content %}
+    <div class="row">
+        <div class="small-12 columns">
+            <h2>{{ data.reversedString }}</h2>
+        </div>
+    </div>
+{% endblock %}
