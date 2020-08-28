@@ -15,6 +15,7 @@ regions:
                 password: secret
 
         stores:
+
             DE:
                 services:
                     broker:
@@ -83,6 +84,11 @@ groups:
                         services:
                             session:
                                 namespace: 4
+                    zed.demo.spryker.local:
+                        store: DEMO
+                        services:
+                            session:
+                                namespace: 7
     US:
         region: US
         applications:
