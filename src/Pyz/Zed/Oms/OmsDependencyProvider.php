@@ -7,6 +7,8 @@
 
 namespace Pyz\Zed\Oms;
 
+use Pyz\Zed\Oms\Communication\Plugin\Command\Demo\PayCommand;
+use Pyz\Zed\Oms\Communication\Plugin\Condition\Demo\IsAuthorizedCondition;
 use Spryker\Zed\Availability\Communication\Plugin\AvailabilityHandlerPlugin;
 use Spryker\Zed\GiftCard\Communication\Plugin\Oms\Command\CreateGiftCardCommandPlugin;
 use Spryker\Zed\GiftCard\Communication\Plugin\Oms\Condition\IsGiftCardConditionPlugin;
@@ -49,6 +51,7 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
             $commandCollection->add(new SendOrderShippedPlugin(), 'Oms/SendOrderShipped');
             $commandCollection->add(new ShipGiftCardByEmailCommandPlugin(), 'GiftCardMailConnector/ShipGiftCard');
             $commandCollection->add(new CreateGiftCardCommandPlugin(), 'GiftCard/CreateGiftCard');
+            $commandCollection->add(new PayCommand(), 'Demo/Pay');
 
             return $commandCollection;
         });
@@ -65,7 +68,8 @@ class OmsDependencyProvider extends SprykerOmsDependencyProvider
     {
         $container->extend(OmsDependencyProvider::CONDITION_PLUGINS, function (ConditionCollectionInterface $conditionCollection) {
             $conditionCollection
-                ->add(new IsGiftCardConditionPlugin(), 'GiftCard/IsGiftCard');
+                ->add(new IsGiftCardConditionPlugin(), 'GiftCard/IsGiftCard')
+                ->add(new IsAuthorizedCondition(), 'Demo/IsAuthorized');
 
             return $conditionCollection;
         });
