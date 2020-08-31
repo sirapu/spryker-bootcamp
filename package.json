@@ -38,7 +38,7 @@
     "string.prototype.startswith": "~0.2.0"
   },
   "devDependencies": {
-    "@spryker/oryx-for-zed": "^2.5.2",
+    "@spryker/oryx-for-zed": "^2.7.0",
     "autoprefixer": "~8.6.2",
     "clean-webpack-plugin": "~1.0.1",
     "commander": "~4.0.1",
@@ -46,7 +46,7 @@
     "css-loader": "~3.2.0",
     "fast-glob": "~3.1.0",
     "mini-css-extract-plugin": "~0.8.0",
-    "node-sass": "~4.13.0",
+    "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "~5.0.1",
     "postcss-loader": "~3.0.0",
     "sass-loader": "~8.0.0",
